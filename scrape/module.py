@@ -18,7 +18,6 @@ def pdf_from_url(url):
     ''' 
     module_info = requests.get(url).content
     return parse_html(module_info)    
-#pdf_from_url('https://auth.galvanize.com/sign_in')    
 
 def pdf_from_file(file):
     '''
@@ -28,8 +27,3 @@ def pdf_from_file(file):
     with open(file, 'r') as f:
         contents = f.read()
     return parse_html(contents)
-
-pdf_from_file('test_page.html')
-# module_files('https://learn-2.galvanize.com/cohorts/2836/blocks/1310/content_files/update-and-delete/update-and-delete.md')
-# string to search for in module
-# <a href="https:.*? class="lesson">
