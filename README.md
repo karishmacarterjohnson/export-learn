@@ -2,9 +2,10 @@
 
 A repo for the adies who want pdfs of their learn content
 requirements:
+```
 python3
 chrome 
-
+```
 # Setup
 
 on your local machine:
