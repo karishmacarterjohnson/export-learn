@@ -23,7 +23,7 @@ Once set up activate the environment,
 install requirements using
 `pip install -r requirements.txt`
 
-create an environment file in the `export-learn` directory using
+create an environment file in the 'export-learn' directory using
 `touch .env`
 
 within the .env file, include the following:
