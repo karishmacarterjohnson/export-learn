@@ -8,7 +8,7 @@ chrome
 # Setup
 
 on your local machine:
-`git clone (repo_link)` 
+`git clone https://github.com/karishmacarterjohnson/export-learn.git` 
 
 change directory to the repo
 `cd export-learn`
