@@ -1,17 +1,28 @@
 from scrape.module import *
 from scrape.unit import *
+from scrape.login import *
 import os
 
-hierarchy = units_from_file('sample_files/test_home.html')
-for unit, modules in hierarchy.items():
-    # mkdir for the unit
-    for module_name, module_link in modules.items():
-        # mkdir for each module using module_name
-        # for each page in module
-        # define save path
-        module_pages = pages_from_file(module_link, path)
-        for page in module_pages:
-            # save file
-            print(page)
 
-# pages_from_url('https://auth.galvanize.com/sign_in')    
+driver = login(os.getcwd())
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+hierarchy = get_units(driver)
+
+path = os.path.join(os.getcwd(),'ada-learn')
+
+for unit, modules in hierarchy.items():
+    unit_path = os.path.join(path, unit) 
+    os.mkdir(unit_path)
+    for module_name, module_link in modules.items():
+        module_path = os.path.join(unit_path, module_name)
+        os.mkdir(module_path)
+        driver = save_pages(module_path, module_link, driver)
+    print(f"{unit} has been saved...")
+driver.close()
+driver.quit()
+
+ 
+# ask zip or leave as is
+# if input().lower() == y:
+# zip

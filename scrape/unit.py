@@ -1,37 +1,18 @@
-import os
-import requests
-from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+import time 
 
-def parse_html(html):
-    '''
-    input: home page info
-    return: dict with unit title, module title, and link to module
-    '''
-    soup = BeautifulSoup(html, "html.parser")
+
+def get_units(driver):
     unit_info = {}
-    module_info = {}
-    for unit in soup.findAll('div', attrs = {'class': 'block-container'}):
-        unit_name = unit['id']
-        modules = unit.findAll('a', attrs = {'class': 'standard-card'})
+    time.sleep(5)
+    units =  driver.find_elements(By.CLASS_NAME, "block-container ")
+
+    for unit in units:
+        unit_name = unit.get_attribute('id')
+        modules = unit.find_elements(By.CLASS_NAME, "standard-card ")
+        module_info = {}
         for module in modules:
-            page = module.find('div', attrs = {'class': 'standard-card-heading'})['title']
-            module_info[page] = module['href']
+            page = module.find_element(By.CLASS_NAME, "standard-card-heading")
+            module_info[page.get_attribute('title')] = module.get_attribute('href')
             unit_info[unit_name] = module_info
     return unit_info
-
-def units_from_url(url):   
-    '''
-    input: home page url
-    return: dictionary of all units
-    ''' 
-    module_info = requests.get(url).content
-    return parse_html(module_info)     
-
-def units_from_file(file):
-    '''
-    input: home page file
-    return: dictionary of all units
-    ''' 
-    with open(file, 'r') as f:
-        contents = f.read()
-    return parse_html(contents)
