@@ -47,13 +47,9 @@ While running, the automated script will launch a chrome browser. this will like
  To begin, run 
 `python main.py`
 
-Files will be saved within the `ada-learn` folder with the following structure
-ada-learn
-   unit
+Use command line responses to customize file downloads.
 
-      module
-         page1.pdf
-	page2.pdf
+Files will be saved within the `ada-learn` folder.
 
 should you need to restart the process,
 delete all subfolders within `ada-learn` and rerun main.py
