@@ -15,7 +15,10 @@ path = os.path.join(os.getcwd(),'ada-learn')
 
 for unit, modules in hierarchy.items():
     unit_path = os.path.join(path, unit) 
-    os.mkdir(unit_path)
+    try: 
+        os.mkdir(unit_path)
+    except:
+        pass
     for module_name, module_link in modules.items():
         module_path = os.path.join(unit_path, module_name)
         os.mkdir(module_path)
