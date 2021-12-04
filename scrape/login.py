@@ -28,6 +28,8 @@ def login(path):
             }
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
+    chrome_options.add_argument("start-maximized")
+    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     #chrome_options.add_argument('--headless')
 
 
