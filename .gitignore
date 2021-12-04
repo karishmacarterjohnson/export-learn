@@ -3,6 +3,7 @@
 
 # testing files
 sample_files/
+pse.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
