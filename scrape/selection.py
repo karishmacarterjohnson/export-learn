@@ -11,7 +11,7 @@ def choose_units(hierarchy):
         print("the following units are available to save")
         for key, unit in hierarchy_keys.items():
             print("\t", key, ":", unit)
-        value = input("enter the number of the unit to download or 'x' to stop\n")
+        value = input("enter the number of the unit to download or 'x' to start downloads\n")
         if value.lower() == 'x':
             cont = False
         try:
