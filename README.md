@@ -42,7 +42,11 @@ now you can run it!
 
 # Run
 
-WARNING: The actual script will take some time to run (about 10 minutes per module in my experience)
+!!! WARNING !!! The actual script will take some time to run (about 10 minutes per module in my experience). 
+
+IMPORTANT: In order to save PSEs / submission pages, the driver will hit 'retake assessment'. This will NOT impact grades of previously graded assignments, but it will make it look like you are currently continuing that assignment.
+
+
 While running, the automated script will launch a chrome browser. this will likely interfere with device usage. It is recommended that the following steps are completed at a time where the script can run uninterrupted
 
  To begin, run 
@@ -53,4 +57,4 @@ Use command line responses to customize file downloads.
 Files will be saved within the `ada-learn` folder.
 
 should you need to restart the process,
-delete all subfolders within `ada-learn` and rerun main.py
+delete all subfolders within `ada-learn` (or move them elsewhere) and rerun main.py
